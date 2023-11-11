@@ -5,9 +5,33 @@
 <div class="col-md-6 offset-md-3">
 
   {% if user.is_authenticated %}
-
-    <h1>Welcome back</h1>
-
+  <br/>
+  <table class="table table-striped table-hover table-bordered" >
+    <thead class ="table-dark">
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">Common Name</th>
+        <th scope="col">Family Name</th>
+        <th scope="col">Scientific Name</th>
+        <th scope="col">Conservation Status</th>
+      </tr>
+      </thead>
+    <tbody>
+      {%if records%}
+        {%for record in records%}
+          <tr>
+          <td><strong>{{record.id}}</strong></td>
+          <td><strong>{{record.Common_Name}}</strong></td>
+          <td>{{record.Family_Name}}</td>
+          <td><em>{{record.Scientific_Name}}</em></td>
+          <td>{{record.Conservation_status}}</td>
+          </tr>
+        {%endfor%}
+      {%endif%}
+    </tbody>
+  </table>
+  <br/>        
+  
   {% else %}
   <h1>Login</h1>
   <br/>
