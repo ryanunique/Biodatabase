@@ -1,3 +1,4 @@
+
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -24,39 +25,43 @@
   <!-- Template Main CSS File -->
   <link href="static/css/style.css" rel="stylesheet">
 </head>
-
-<br>
-  <header id="header" class="header fixed-top d-flex align-items-center">
-
-    <div class="d-flex align-items-center justify-content-between">
-      <a href="{%url 'home'%}" class="logo d-flex align-items-center">
-        <img src="static/img/cfem.jpg" alt="">
-        <span class="d-none d-lg-block">CFEM DASHBOARD</span>
-      </a>
-      <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Logo -->
+<body>
     
-    <div class="search-bar">
-      <form class="search-form d-flex align-items-center" method="POST" action="{%url 'home'%}">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-      </form>
-    </div><!-- End Search Bar -->
-
-  </header>
-</br>
-
-  <aside id="sidebar" class="sidebar">
-  </br>
-    <ul class="sidebar-nav" id="sidebar-nav">
-      <li class="nave-item">
-        <a class="nav-link collapsed" href="#">
-          <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
+  <section class="section-dashboard">
+    <br>
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="{%url 'home'%}" class="logo d-flex align-items-center">
+          <img src="static/img/cfem.jpg" alt="">
+          <span class="d-none d-lg-block">CFEM DASHBOARD</span>
         </a>
-      </li>
-  </aside>
-    
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+      </div><!-- End Logo -->
+    </header>
+  </br>
+
+    <aside id="sidebar" class="sidebar">
+        </br>
+          <ul class="sidebar-nav" id="sidebar-nav">
+            <li class="nave-item">
+              <a class="nav-link collapsed" href="{%url 'home'%}">
+                <i class="bi bi-grid"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="nave-item">
+              <a class="nav-link collapsed" href="{%url 'students'%}">
+                <i class="bi bi-grid"></i>
+                <span>List of Selected Students</span>
+              </a>
+            </li>
+          </ul>
+    </aside>
+
+  </section>
+
+  
+      
 
 </body>
   

@@ -1,6 +1,6 @@
 {%extends 'base.html'%}
 
-  {%block content%}
+{%block content%}
   <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -146,35 +146,6 @@
               </div>
           </div>
         </div>
-
-        <div class="col-12">
-          <div class="card recent-sales overflow-auto">
-              <div class="card-body">
-                  <h5 class="card-title">List of Students<span></span></h5>
-
-                  <table class="table table-borderless datatable">
-                      <thead>
-                          <tr>
-                              <th scope="col">Student ID</th>
-                              <th scope="col">Full Name</th>
-                              <th scope="col">Course</th>
-                              <th scope="col">Event</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                              {% for student in Students %}
-                                  <tr>
-                                      <td>{{ student.student_id }}</td>
-                                      <td>{{ student.name }}</td>
-                                      <td>{{ student.course}}</td>
-                                      <td>{{ student.event}}</td>
-                                  </tr>
-                              {% endfor %}
-                      </tbody>
-                  </table>
-              </div>
-          </div>
-        </div>
         </div>
         </div>
         </div>
@@ -197,3 +168,4 @@
 
   </body>
 {%endblock%}
+

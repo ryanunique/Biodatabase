@@ -5,12 +5,14 @@ from .forms import SignUpForm
 from .models import Record
 from .models import remark
 from .models import ongoin
+from .models import Students
 
 def home(request):
 
 	records=Record.objects.all()
 	Remarks = remark.objects.all()
 	Ongoing = ongoin.objects.all()
+	Studentss = Students.objects.all()
 	
 	if request.method == 'POST':
 		username = request.POST['username']
@@ -25,7 +27,8 @@ def home(request):
 			return redirect('home')
 	else:
 		
-		return render (request,'home.html',{'records':records, 'remarks':Remarks,'Ongoing':Ongoing})
+		return render(request, 'home.html', {'records': records, 'remarks': Remarks, 'Ongoing': Ongoing, 'Students': Studentss})
+
 	
 	
 
@@ -66,3 +69,6 @@ def register_user(request):
 		form = SignUpForm()
 		return render (request,'register.html',{'form':form})
 	return render(request, 'register.html', {'form':form})
+
+def students(request):
+	return render(request,'students.html')
