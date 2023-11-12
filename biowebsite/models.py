@@ -7,7 +7,24 @@ class Record (models.Model):
     Scientific_Name = models.CharField(max_length=100)
     Conservation_status = models.CharField(max_length=100)
     image_link = models.TextField()
+    def __str__(self):
+        return ("{self.Common_Name} {self.Scientific_Name}")
 
+
+class remark(models.Model):
+    todate = models.DateField()
+    re_activity = models.CharField(max_length=100)
+    re_remarks = models.CharField(max_length=100)
+    re_status = models.CharField(max_length=100)
 
     def __str__(self):
-        return (f"{self.Common_Name} {self.Scientific_Name}")
+        return ("{self.todate} {self.re_activity}")
+    
+
+class ongoin(models.Model):
+    time= models.DateTimeField(auto_created=True)
+    ongoing_activity = models.TextField()
+    
+    def __str__(self):
+        return ("{self.ongoing_activity}")
+

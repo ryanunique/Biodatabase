@@ -3,11 +3,15 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from .forms import SignUpForm
 from .models import Record
+from .models import remark
+from .models import ongoin
 
 def home(request):
 
 	records=Record.objects.all()
-
+	Remarks = remark.objects.all()
+	Ongoing = ongoin.objects.all()
+	
 	if request.method == 'POST':
 		username = request.POST['username']
 		password = request.POST['password']
@@ -20,7 +24,10 @@ def home(request):
 			messages.success(request,"Username OR password is incorrect")
 			return redirect('home')
 	else:
-		return render (request,'home.html',{'records':records})
+		
+		return render (request,'home.html',{'records':records, 'remarks':Remarks,'Ongoing':Ongoing})
+	
+	
 
 def login_user (request):
 	# check if user is loging in
